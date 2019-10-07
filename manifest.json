@@ -1,0 +1,21 @@
+{
+  "name": "Git Clicks",
+  "version": "1.0",
+  "description": "Navigate through the class names and declarations in Github like an IDE",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery-3.4.1.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "manifest_version": 2
+}
