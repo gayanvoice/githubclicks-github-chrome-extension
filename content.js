@@ -25,15 +25,24 @@ function getPkg(){
 }
 
 
-function getCls(){
+function getCls(variable){
     packageName = 'no_repo';
-    $('span').filter(function(){
+    $('span').each(function(){
         if($(this).text() === "import"){
             tdTag = $(this).parent().closest('td');
             tdTag.children('span').next('span').css("border", "solid 2px red");
-            packageName = tdTag.children('span').next('span').text();
-
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                console.log('available ' + page);
+                $(window).scrollTop($(this).offset().top);
+                return false;
+            } else {
+                console.log('not available ' + page);
+            }
+            packageName = page;
         } else {
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css('border', '');
             return 'no_repo';
         }
     });
@@ -84,12 +93,15 @@ $(window).on('load', function() {
                 if(check(variable) === 0){
                     window.scrollTo(0, 0);
                 } else {
-                    window.open(get_baseUrl() + variable +  get_langType(), '_blank');
+                    getCls(variable);
+                    //window.open(get_baseUrl() + variable +  get_langType(), '_blank');
                 }
             });
 
-            getPkg();
-            getCls();
+            console.log(get_slicePkg(getPkg(), '.').length);
+
+            console.log(getPkg());
+            console.log(getCls('FileWriter'));
 
             $('tr td span').on('mouseover', function () {
                 $(this).css('text-decoration', 'underline');
