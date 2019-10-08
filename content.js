@@ -7,6 +7,9 @@ function checkOrigin(origin){
 }
 
 
+// https://api.github.com/repos/gayankuruppu/android-view-animations-java/contents/library/src/main/java/render/animations
+// https://api.github.com/repos/gayankuruppu/android-view-animations-java get language type
+
 
 function getPkg(){
     packageName = 'no_repo';
@@ -40,16 +43,42 @@ function get_baseUrl() {
 }
 
 
+function get_baseFile() {
+    var index = url.lastIndexOf("/") + 1;
+    var filenameWithExtension = url.substr(index);
+    return filenameWithExtension.split(".")[0]; // <-- added this line
+}
+
+function check (variable){
+    if(variable === get_baseFile()){
+        return 0;
+    } else {
+
+    }
+}
+
 $(window).on('load', function() {
     if(checkOrigin(origin)) {
+        console.log(get_baseFile());
+
         $('td span').on('mousedown', function () {
-            var Value = $(this).text();
-            window.open(get_baseUrl() + Value +  get_langType(), '_blank');
+            var variable = $(this).text();
+            if(check(variable) === 0){
+                window.scrollTo(0, 0);
+            } else {
+                window.open(get_baseUrl() + variable +  get_langType(), '_blank');
+            }
         });
 
 
 
 
+        $('tr td span').on('mouseover', function () {
+            $(this).css('text-decoration', 'underline');
+
+        }).on('mouseout', function () {
+            $(this).css('text-decoration', '');
+        });
 
 
         $('td span:contains("import")').each(function () {
@@ -58,23 +87,7 @@ $(window).on('load', function() {
             }
         });
 
-        $('tr td span').on('mouseover', function () {
-            $('tr td span:contains("import")').each(function(){
-            if($(this).children().length < 1) {
 
-            }
-//                //tdTag = $(this).parent().closest('td').css("border", "solid 2px red");
-//                tdTag = $(this).parent().closest('td');
-//                tdTag.children('span').next('span').css("border", "solid 2px green");
-//                packageName = tdTag.children('span').next('span');
-//                //alert(packageName.text() + ' packageName');
-            });
-
-
-            $(this).css('border', 'solid 2px red');
-        }).on('mouseout', function () {
-            $(this).css('border', '');
-        });
     }
 });
 
