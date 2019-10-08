@@ -24,6 +24,22 @@ function getPkg(){
     return packageName;
 }
 
+
+function getCls(){
+    packageName = 'no_repo';
+    $('span').filter(function(){
+        if($(this).text() === "import"){
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css("border", "solid 2px red");
+            packageName = tdTag.children('span').next('span').text();
+
+        } else {
+            return 'no_repo';
+        }
+    });
+    return packageName;
+}
+
 function get_slicePkg(packageName, character){
     return array = packageName.split(character);
 }
@@ -48,6 +64,9 @@ function get_baseFile() {
     return filenameWithExtension.split(".")[0]; // <-- added this line
 }
 
+function check_isFile() {
+    return pathname.split('/').pop().indexOf('.') > -1;
+}
 function check (variable){
     if(variable === get_baseFile()){
         return 0;
@@ -58,35 +77,30 @@ function check (variable){
 
 $(window).on('load', function() {
     if(checkOrigin(origin)) {
-        console.log(get_baseFile());
+        if(check_isFile()){
+            console.log(get_baseFile());
+            $('td span').on('mousedown', function () {
+                var variable = $(this).text();
+                if(check(variable) === 0){
+                    window.scrollTo(0, 0);
+                } else {
+                    window.open(get_baseUrl() + variable +  get_langType(), '_blank');
+                }
+            });
 
-        $('td span').on('mousedown', function () {
-            var variable = $(this).text();
-            if(check(variable) === 0){
-                window.scrollTo(0, 0);
-            } else {
-                window.open(get_baseUrl() + variable +  get_langType(), '_blank');
-            }
-        });
+            getPkg();
+            getCls();
 
+            $('tr td span').on('mouseover', function () {
+                $(this).css('text-decoration', 'underline');
 
-
-
-        $('tr td span').on('mouseover', function () {
-            $(this).css('text-decoration', 'underline');
-
-        }).on('mouseout', function () {
-            $(this).css('text-decoration', '');
-        });
-
-
-        $('td span:contains("import")').each(function () {
-            if ($(this).children().length < 1) {
-                $(this).css('border', 'solid 2px green');
-            }
-        });
+            }).on('mouseout', function () {
+                $(this).css('text-decoration', '');
+            });
 
 
+
+        }
     }
 });
 
@@ -97,6 +111,17 @@ $(window).on('load', function() {
 //
 //
 //    }
+//  $('tr td span:contains("package")').each(function () {
+//                 if ($(this).children().length < 1) {
+//                     $(this).css('border', 'solid 2px green');
+//                 }
+//             });
+//
+//             $('tr td span:contains("import")').each(function () {
+//                 if ($(this).children().length < 1) {
+//                     $(this).css('border', 'solid 2px green');
+//                 }
+//             });
 //
 //
 //    if(origin === 'https://github.com'){
