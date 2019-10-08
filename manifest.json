@@ -1,16 +1,16 @@
 {
-  "name": "Git Clicks",
+  "name": "GitHub Clicks",
   "version": "1.0",
   "description": "Navigate through the class names and declarations in Github like an IDE",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["js/vendor/jquery-3.4.1.js", "js/content.js", "js/github.js"],
+      "js": ["js/vendor/jquery-3.4.1.js", "js/github.js", "js/util.js"],
       "run_at": "document_end"
     }
   ],
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["js/worker.js"]
   },
   "permissions": [
     "activeTab"
