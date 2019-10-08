@@ -24,6 +24,25 @@ function getPkg(){
     return packageName;
 }
 
+function checkCls(variable) {
+    var statehasstores = false;
+    $('span').each(function(){
+        if($(this).text() === "import"){
+            tdTag = $(this).parent().closest('td');
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                statehasstores = true;
+                return false;
+            } else {
+                isClass = false;
+            }
+        } else {
+            isClass = false;
+        }
+    });
+    console.log(statehasstores);
+    return statehasstores;
+}
 
 function getCls(variable){
     packageName = 'no_repo';
@@ -48,6 +67,33 @@ function getCls(variable){
     });
     return packageName;
 }
+
+
+
+function getVar(variable){
+    packageName = 'no_repo';
+    $('span').each(function(){
+        if($(this).text() === "int"){
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css("border", "solid 2px red");
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                console.log('available ' + page);
+                $(window).scrollTop($(this).offset().top);
+                return false;
+            } else {
+                console.log('not available ' + page);
+            }
+            packageName = page;
+        } else {
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css('border', '');
+            return 'no_repo';
+        }
+    });
+    return packageName;
+}
+
 
 function get_slicePkg(packageName, character){
     return array = packageName.split(character);
@@ -92,7 +138,7 @@ $(window).on('load', function() {
                 var variable = $(this).text();
                 if(check(variable) === 0){
                     window.scrollTo(0, 0);
-                } else {
+                } else if (checkCls(variable)){
                     getCls(variable);
                     //window.open(get_baseUrl() + variable +  get_langType(), '_blank');
                 }

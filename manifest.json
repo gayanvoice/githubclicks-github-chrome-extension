@@ -4,15 +4,13 @@
   "description": "Navigate through the class names and declarations in Github like an IDE",
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": ["jquery-3.4.1.js", "content.js"],
+      "matches": ["https://github.com/*"],
+      "js": ["js/vendor/jquery-3.4.1.js", "js/content.js", "js/github.js"],
       "run_at": "document_end"
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["js/background.js"]
   },
   "permissions": [
     "activeTab"
