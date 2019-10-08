@@ -1,1 +1,1 @@
-# ChromeGitHubClicks
+# GitHubClicks
