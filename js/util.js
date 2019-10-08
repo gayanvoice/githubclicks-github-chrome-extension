@@ -6,6 +6,108 @@ function checkOrigin(origin){
 // https://api.github.com/repos/gayankuruppu/android-view-animations-java/contents/library/src/main/java/render/animations
 // https://api.github.com/repos/gayankuruppu/android-view-animations-java get language type
 
+function getPkg(){
+    packageName = 'no_repo';
+    $('span').filter(function(){
+        if($(this).text() === "package"){
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css("border", "solid 2px green");
+            packageName = tdTag.children('span').next('span').text();
+        } else {
+            return 'no_repo';
+        }
+    });
+    return packageName;
+}
+
+function checkCls(variable) {
+    var statehasstores = false;
+    $('span').each(function(){
+        if($(this).text() === "import"){
+            tdTag = $(this).parent().closest('td');
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                statehasstores = true;
+                return false;
+            } else {
+                isClass = false;
+            }
+        } else {
+            isClass = false;
+        }
+    });
+    console.log(statehasstores);
+    return statehasstores;
+}
+
+function getCls(variable){
+    packageName = 'no_repo';
+    $('span').each(function(){
+        if($(this).text() === "import"){
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css("border", "solid 2px red");
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                console.log('available ' + page);
+                $(window).scrollTop($(this).offset().top);
+                return false;
+            } else {
+                console.log('not available ' + page);
+            }
+            packageName = page;
+        } else {
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css('border', '');
+            return 'no_repo';
+        }
+    });
+    return packageName;
+}
+
+
+
+function getVar(variable){
+    packageName = 'no_repo';
+    $('span').each(function(){
+        if($(this).text() === "int"){
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css("border", "solid 2px red");
+            var page = tdTag.children('span').next('span').text();
+            if(page.includes(variable)){
+                console.log('available ' + page);
+                $(window).scrollTop($(this).offset().top);
+                return false;
+            } else {
+                console.log('not available ' + page);
+            }
+            packageName = page;
+        } else {
+            tdTag = $(this).parent().closest('td');
+            tdTag.children('span').next('span').css('border', '');
+            return 'no_repo';
+        }
+    });
+    return packageName;
+}
+
+
+function get_slicePkg(packageName, character){
+    return array = packageName.split(character);
+}
+
+
+
+function get_baseFile() {
+    var index = url.lastIndexOf("/") + 1;
+    var filenameWithExtension = url.substr(index);
+    return filenameWithExtension.split(".")[0]; // <-- added this line
+}
+
+function check_isFile() {
+    return pathname.split('/').pop().indexOf('.') > -1;
+}
+
+
 
 function check (variable){
     if(variable === get_baseFile()){
@@ -15,6 +117,19 @@ function check (variable){
     }
 }
 
+
+function get_langType() {
+    value =  url.substring(url.lastIndexOf('/') + 1);
+    if((value.split('.')[1]) === 'java'){
+        return '.java'
+    } else {
+        return '.kt';
+    }
+}
+
+function get_baseUrl() {
+    return document.URL.substr(0,document.URL.lastIndexOf('/')) + '/';
+}
 
 
 

@@ -1,7 +1,7 @@
 {
   "name": "GitHub Clicks",
   "version": "1.0",
-  "description": "Navigate through the class names and declarations in Github like an IDE",
+  "description": "Navigate through the class names and declarations in GitHub like an IDE",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
