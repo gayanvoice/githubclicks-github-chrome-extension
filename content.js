@@ -6,7 +6,6 @@ function checkOrigin(origin){
     return origin === 'https://github.com';
 }
 
-
 // https://api.github.com/repos/gayankuruppu/android-view-animations-java/contents/library/src/main/java/render/animations
 // https://api.github.com/repos/gayankuruppu/android-view-animations-java get language type
 
