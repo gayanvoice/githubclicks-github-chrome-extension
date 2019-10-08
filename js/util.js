@@ -44,25 +44,6 @@ function getPkg(){
     return packageName;
 }
 
-function checkCls(variable) {
-    var statehasstores = false;
-    $('span').each(function(){
-        if($(this).text() === "import"){
-            tdTag = $(this).parent().closest('td');
-            var page = tdTag.children('span').next('span').text();
-            if(page.includes(variable)){
-                statehasstores = true;
-                return false;
-            } else {
-                isClass = false;
-            }
-        } else {
-            isClass = false;
-        }
-    });
-    console.log(statehasstores);
-    return statehasstores;
-}
 
 
 
