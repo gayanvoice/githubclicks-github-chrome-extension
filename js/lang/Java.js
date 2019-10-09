@@ -14,10 +14,53 @@ class Java {
         } else if (this.isVariable(this.variable, ['int', 'String', 'long', 'boolean'])){
             this.goVariable(this.variable, ['int', 'String', 'long', 'boolean']);
         } else {
-            console.log(this.getDirectory(this.url), this.variable, this.filetype);
-            this.goSource(this.getDirectory(this.url), this.variable, this.filetype);
+            var values = this.getAPI(this.url);
+            var url = this.getDirectory(this.url) + this.variable + this.filetype;
+            var variable = this.variable;
+            this.getRequest('https://api.github.com/repos/' + values[1] + '/' + values[2] + '/contents/src/main/java/com/android/volley/' +
+                this.variable + this.filetype,  function(status){
+                if(status === 200){
+                    console.log('200');
+                    window.open(url, '_blank');
+                }
+
+                else if(status === 404){
+                    alert('\'' + variable + '\' is a readonly variable');
+                    $('#myModal').modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+
+                } else {
+                    console.log('error');
+                }
+            });
+
+
         }
     }
+
+
+    getRequest(url, cb){
+        jQuery.ajax({
+            url:      url,
+            dataType: 'text',
+            type:     'GET',
+            complete:  function(xhr){
+                if(typeof cb === 'function'){
+                    cb.apply(this, [xhr.status]);
+                }
+            }
+        });
+    }
+
+
+    getAPI(url){
+        url = url.replace(/^https?:\/\//,'');
+        return url.split('/');
+    }
+
+
 
     getVariable(variable){
         return variable.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
@@ -26,7 +69,7 @@ class Java {
     getFile(url) {
         var index = url.lastIndexOf('/') + 1;
         var filenameWithExtension = url.substr(index);
-        return filenameWithExtension.split('.')[0]; // <-- added this line
+        return filenameWithExtension.split('.')[0];
     }
 
     getDirectory(url){
@@ -109,7 +152,5 @@ class Java {
         });
     }
 
-    goSource(url, variable, filetype){
-        window.open(url + variable +  filetype, '_blank');
-    }
+
 }

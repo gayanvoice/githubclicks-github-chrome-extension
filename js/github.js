@@ -14,6 +14,9 @@ $(window).on('load', function() {
                 }
             });
 
+
+
+
             // highlights the variables
             $('tr td span').on('mouseover',function () {
                 $(this).css({'text-decoration':'underline', 'cursor':'pointer'});

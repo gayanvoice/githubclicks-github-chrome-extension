@@ -8,14 +8,6 @@ function isFile(url) {
     return url.split('/').pop().indexOf('.') > -1;
 }
 
-// Get the file from URL
-function getFile(url) {
-    var index = url.lastIndexOf("/") + 1;
-    var filenameWithExtension = url.substr(index);
-    return filenameWithExtension.split(".")[0]; // <-- added this line
-}
-
-
 // Get lang type
 function getLang(url) {
     value =  url.substring(url.lastIndexOf('/') + 1);

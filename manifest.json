@@ -5,13 +5,15 @@
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["js/vendor/jquery-3.4.1.js", "js/github.js", "js/util.js", "js/lang/Java.js"],
+      "css": ["css/bootstrap.min.css"],
+      "js": ["js/vendor/jquery-3.4.1.js", "js/vendor/bootstrap.min.js", "js/github.js", "js/util.js", "js/lang/Java.js"],
       "run_at": "document_end"
     }
   ],
   "background": {
     "scripts": ["js/worker.js"]
   },
+  "web_accessible_resources": ["modal.html","modal.js","bootstrap.min.js","bootstrap.min.css"],
   "permissions": [
     "activeTab"
   ],
