@@ -9,7 +9,7 @@ $(window).on('load', function() {
             $('td span').on('mousedown', function () {
                 var variable = $(this).text();
                 if(getLang(url) === 1){
-                    java = new Java(url, variable);
+                    java = new Java(url, pathname, variable);
                     java.showVariable();
                 }
             });
