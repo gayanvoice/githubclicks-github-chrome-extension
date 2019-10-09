@@ -9,6 +9,11 @@
       "run_at": "document_end"
     }
   ],
+  "icons": {
+    "16": "github16.png",
+    "64": "github64.png",
+    "128": "github128.png"
+  },
   "background": {
     "scripts": ["js/worker.js"]
   },

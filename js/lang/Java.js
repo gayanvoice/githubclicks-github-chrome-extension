@@ -5,21 +5,20 @@ class Java {
         this.packageName = this.getPackageName(variable);
         this.variable = this.getVariable(variable);
         this.filetype = '.java';
-        this.pkgname = this.getPackage();
     }
 
     showVariable() {
-        console.log(this.isPackage(this.packageName));
-
-        if(this.isPackage(this.packageName)){
-            this.goPackage(this.pathname, this.getPackage(), this.packageName);
-        } else {
+       // if(this.isPackage(this.packageName)){
+       //     this.goPackage(this.pathname, this.getPackage(), this.packageName);
+       // } else {
             if(this.isFile(this.variable, this.url)){
                 this.goTop();
             } else if (this.isClass(this.variable)){
                 this.goClass(this.variable);
             } else if (this.isVariable(this.variable, ['int', 'String', 'long', 'boolean'])){
                 this.goVariable(this.variable, ['int', 'String', 'long', 'boolean']);
+            } else if(this.isPackage(this.packageName)){
+                this.goPackage(this.pathname, this.getPackage(), this.packageName);
             } else {
                 var values = this.getAPI(this.url);
                 var url = this.getDirectory(this.url) + this.variable + this.filetype;
@@ -49,7 +48,7 @@ class Java {
                     }
                 });
             }
-        }
+      //  }
 
     }
 
