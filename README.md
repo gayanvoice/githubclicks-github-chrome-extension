@@ -1,5 +1,5 @@
 # GitHubClicks
-
+Navigate through classes and declarations in GitHub like an IDE. Supports Android Java and Kotlin.
 <pre>
 root/
 ├── LICENSE
