@@ -6,8 +6,6 @@ Navigate through modules, classes, and declarations in GitHub like an IDE. The C
 
 ![GitHub Clicks](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks.gif)
 
-[![GitHub Clicks](https://img.youtube.com/vi/3SkTmxNDOY4/0.jpg)](https://www.youtube.com/watch?v=3SkTmxNDOY4)
-
 ## Install
 ### 1. Get the extension as Download ZIP
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-1.png "Download repo as a compress file")
@@ -53,6 +51,10 @@ The values in the `background` contain `scripts` which stores the order of javas
 The `github.js` file loads into the content to check if the page is a `github` page, and check if the page is a file by using the extension. If the content is a file then text highlight when mouseover on the span tags. If the user clicks on the text, separate javascript classes in the `lang` folder will load into the container depends on the extension of the file.
 #### util.js
 consists of some common functions to share with other classes and mostly with github.js. 
+
+## Video
+[![GitHub Clicks](https://img.youtube.com/vi/3SkTmxNDOY4/0.jpg)](https://www.youtube.com/watch?v=3SkTmxNDOY4)
+
 
 ## License
 <pre>
