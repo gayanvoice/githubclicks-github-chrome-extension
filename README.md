@@ -1,14 +1,19 @@
 # GitHubClicks
 
 <pre>
-bootstrap/
-├── less/
+root/
+├── LICENSE
+├── README.md
+├── github128.png
+├── github64.png
+├── github16.png
 ├── js/
-├── fonts/
-├── dist/
-│   ├── css/
-│   ├── js/
-│   └── fonts/
-└── docs/
-    └── examples/
+│   └── github.js
+│   └── util.js
+│   └── worker.js
+│   ├── lang/
+│   |   └── Java.js
+│   |   └── Kotlin.js
+│   ├── vendor/
+│   |   └── jquery-3.4.1.js.js
 </pre>
