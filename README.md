@@ -1,5 +1,6 @@
 # GitHubClicks
-Navigate through classes and declarations in GitHub like an IDE. Supports Android Java and Kotlin.
+Navigate through Java and Kotlin modules, classes and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API.
+
 <pre>
 root/
 ├── LICENSE
