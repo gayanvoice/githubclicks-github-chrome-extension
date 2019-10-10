@@ -171,9 +171,10 @@ class Java {
         $('span').each(function(){
             if($(this).text() === "import"){
                 var td = $(this).parent().closest('td');
-                td.children('span').next('span').css("border", "solid 2px red");
+                td.children('span').next('span');
                 var spanValue = td.children('span').next('span').text();
                 if(spanValue.includes(variable)){
+                    $(this).css("border", "solid 2px red");
                     $(window).scrollTop($(this).offset().top);
                     return false;
                 }
@@ -186,9 +187,9 @@ class Java {
             if (($(this).text() === datatype[0]) || $(this).text() === datatype[1]
                 || $(this).text() === datatype[2] || $(this).text() === datatype[3]) {
                 var td = $(this).parent().closest('td');
-                td.children('span').next('span').delay(500).fadeIn(1100);
                 var spanValue = td.children('span').next('span').text();
                 if(spanValue.includes(variable)){
+                    $(this).css("border", "solid 2px red");
                     $(window).scrollTop($(this).offset().top);
                     return false;
                 }
