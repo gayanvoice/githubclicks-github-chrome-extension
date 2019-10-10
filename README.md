@@ -8,7 +8,7 @@
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API.
 
 The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
-#### Video
+### Video
 [![GitHub Clicks](https://img.youtube.com/vi/3SkTmxNDOY4/0.jpg)](https://www.youtube.com/watch?v=3SkTmxNDOY4)
 
 ## Install
