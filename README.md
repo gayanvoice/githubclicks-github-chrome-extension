@@ -25,7 +25,7 @@ The project supports Android projects written in Java and Kotlin. The extension 
 ### 6. Refresh the extension after the changes
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-6.png "Added to browser")
 
-## Refresh page!
+## Refresh the page
 Github request the files asynchronously. So there is a delay between the actual appearence of the page and the execution of the script. To avoid this, the extension needs a little delay to execute the script. But still it is experimental, until you can simply refresh the page again.
 
 ## Contribute
