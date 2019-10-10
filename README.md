@@ -26,10 +26,11 @@ root/
 #### manifest.json
 The extension has a JSON-formatted manifest file, named `manifest.json`, that provides important information about `name`, `version`, `description`, `content_scripts`, `background`, `icons`, `permissions`, and `version`.
 
-##### content_scripts
-The values in the `content_scripts` contains `js` which stores the order of javascript source files in the extension. The `content_scripts` JSONObject injects the javascript source in order`js/vendor/jquery-3.4.1.js`,  `js/github.js`, `js/util.js` and language files `js/lang/Java.js`, `js/lang/Kotlin.js`
+##### `content_scripts`
+The values in the `content_scripts` contains `js` which stores the order of javascript source files in the extension. The `content_scripts` JSONObject injects the javascript source in to the content page of a specific tab in order`js/vendor/jquery-3.4.1.js`,  `js/github.js`, `js/util.js` and language files `js/lang/Java.js`, `js/lang/Kotlin.js`
 
-
+##### `background`
+The values in the `background` contains `scripts` which stores the order of javascript source files in the extension. The `scripts` JSONObject injects the javascript source in the browser. The `js/worker.js` execute the script in to the browser.
 
 
 
