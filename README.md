@@ -25,7 +25,7 @@ The project supports Android projects written in Java and Kotlin. The extension 
 ### 6. Refresh the extension after the changes
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-6.png "Added to browser")
 
-## If the extension is not working, please refresh!
+## If the extension is not working, please refresh page!
 
 ## Contribute
 The extension is not stable and needs some more contribution to integrate this into other languages. The potential limitations of this extension works only on the `master` branch, only supports `primary` data types, and can not detect dependencies from other libraries.
