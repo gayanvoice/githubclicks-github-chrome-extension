@@ -1,5 +1,6 @@
 # GitHubClicks
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gayankuruppu/GitHubClicks) ![GitHub](https://img.shields.io/github/license/gayankuruppu/GitHubClicks)
+![GitHub](https://img.shields.io/github/license/gayankuruppu/GitHubClicks)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gayankuruppu/GitHubClicks)
 
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
 ## Install
