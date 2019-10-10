@@ -209,9 +209,11 @@ class Java {
             var path = this.getAPI(this.url);
             var module = this.getModules(variableName) + this.filetype;
 
+            console.log(this.getModules(variableName));
+
             var indexOfMaster  = path.indexOf('master');
             var indexofJava = path.indexOf('java') + 1;
-            var address = '/';
+            var address = '';
 
             var user = path[1];
             var repo = path[2];
@@ -222,6 +224,7 @@ class Java {
 
             var url = 'https://api.github.com/repos/' + user + '/'+ repo + '/contents' + address + module;
             var fileUrl = 'https://github.com/' + user + '/' + repo + '/blob/master/' + address + module;
+
 
             this.getRequest(url, function(status){
                 if(status === 200){
