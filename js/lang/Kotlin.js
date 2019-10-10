@@ -1,14 +1,12 @@
-class Java {
+class Kotlin {
     constructor(url, pathname, variable) {
         this.url = url;
         this.pathname = pathname;
         this.packageName = this.getPackageName(variable);
         this.variable = this.getVariable(variable);
-        this.filetype = '.java';
-        this.dataType = ['int', 'String', 'long', 'boolean'];
+        this.filetype = '.kt';
+        this.dataType = ['var', 'String', 'long', 'boolean'];
     }
-
-
 
     showVariable() {
             if(this.isFile(this.variable, this.url)){

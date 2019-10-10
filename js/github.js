@@ -11,11 +11,11 @@ $(window).on('load', function() {
                 if(getLang(url) === 1){
                     java = new Java(url, pathname, variable);
                     java.showVariable();
+                } else if (getLang(url) === 2){
+                    kotlin = new Kotlin(url, pathname, variable);
+                    kotlin.showVariable();
                 }
             });
-
-
-
 
             // highlights the variables
             $('tr td span').on('mouseover',function () {

@@ -5,7 +5,7 @@
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["js/vendor/jquery-3.4.1.js",  "js/github.js", "js/util.js", "js/lang/Java.js"],
+      "js": ["js/vendor/jquery-3.4.1.js",  "js/github.js", "js/util.js", "js/lang/Java.js", "js/lang/Kotlin.js"],
       "run_at": "document_end"
     }
   ],
