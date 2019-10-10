@@ -11,7 +11,7 @@ Navigate through modules, classes, and declarations in GitHub like an IDE. The C
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-4.png "Enable developer mode")
 ### 5. Load the extension using Load upacked and select the root folder 
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-5.png "Open load unpacked and select root extension")
-### 6. Finish the installation
+### 6. Refresh the extension after the changes
 ![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-6.png "Added to browser")
 
 ## Contribute
