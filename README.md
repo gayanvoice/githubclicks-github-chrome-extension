@@ -1,8 +1,15 @@
 # GitHubClicks
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
+## Install
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-1.png "Download repo as a compress file")
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-2.png "Extract the compressed repo")
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-3.png "Go to extensions")
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-4.png "Enable developer mode")
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-5.png "Open load unpacked and select root extension")
+![alt text](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks-6.png "Added to browser")
+
 ## Contribute
 The extension is not stable and needs some more contribution to integrate this into other languages. The potential limitations of this extension works only on the `master` branch, only supports `primary` data types, and can not detect dependencies from other libraries.
-
 ### Source
 <pre>
 root/
