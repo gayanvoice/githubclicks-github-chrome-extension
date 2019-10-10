@@ -1,9 +1,6 @@
 # GitHubClicks
-Navigate through modules, classes and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under experimental stage.
-
-
+Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
 ## Contribute
-
 ### Source
 <pre>
 root/
@@ -25,12 +22,36 @@ root/
 </pre>
 #### manifest.json
 The extension has a JSON-formatted manifest file, named `manifest.json`, that provides important information about `name`, `version`, `description`, `content_scripts`, `background`, `icons`, `permissions`, and `version`.
-
 ##### `content_scripts`
 The values in the `content_scripts` contains `js` which stores the order of javascript source files in the extension. The `content_scripts` JSONObject injects the javascript source in to the content page of a specific tab in order`js/vendor/jquery-3.4.1.js`,  `js/github.js`, `js/util.js` and language files `js/lang/Java.js`, `js/lang/Kotlin.js`
-
 ##### `background`
-The values in the `background` contains `scripts` which stores the order of javascript source files in the extension. The `scripts` JSONObject injects the javascript source in the browser. The `js/worker.js` execute the script in to the browser.
+The values in the `background` contain `scripts` which stores the order of javascript source files in the extension. The `scripts` JSONObject injects the javascript source in the browser. The `js/worker.js` execute the script into the browser.
+#### github.js
+The `github.js` file loads into the content to check if the page is a `github` page, and check if the page is a file by using the extension. If the content is a file then text highlight when mouseover on the span tags. If the user clicks on the text, separate javascript classes in the `lang` folder will load into the container depends on the extension of the file.
+#### util.js
+consists of some common functions to share with other classes and mostly with github.js. 
 
+## License
+<pre>
+MIT License
 
+Copyright (c) 2019 Gayan Kuruppu
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre>
