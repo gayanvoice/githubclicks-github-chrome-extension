@@ -5,6 +5,7 @@
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
 
 ![GitHub Clicks](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks.gif)
+[![GitHub Clicks](https://img.youtube.com/vi/3SkTmxNDOY4/0.jpg)](https://www.youtube.com/watch?v=3SkTmxNDOY4)
 
 ## Install
 ### 1. Get the extension as Download ZIP
@@ -51,10 +52,6 @@ The values in the `background` contain `scripts` which stores the order of javas
 The `github.js` file loads into the content to check if the page is a `github` page, and check if the page is a file by using the extension. If the content is a file then text highlight when mouseover on the span tags. If the user clicks on the text, separate javascript classes in the `lang` folder will load into the container depends on the extension of the file.
 #### util.js
 consists of some common functions to share with other classes and mostly with github.js. 
-
-## Video
-[![GitHub Clicks](https://img.youtube.com/vi/3SkTmxNDOY4/0.jpg)](https://www.youtube.com/watch?v=3SkTmxNDOY4)
-
 
 ## License
 <pre>
