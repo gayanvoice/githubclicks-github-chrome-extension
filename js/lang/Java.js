@@ -206,29 +206,48 @@ class Java {
             var pathx = pathname.substring(0, pathname.lastIndexOf("/"));
             window.open(pathx, '_blank');
         } else {
-            //console.log('not equal');
-            var pathy = pathname.substring(0, pathname.lastIndexOf("/")) + this.getModules(packageName, variableName) + this.filetype;
-            window.open(pathy, '_blank');
+            var path = this.getAPI(this.url);
+            var module = this.getModules(variableName) + this.filetype;
+
+            var indexOfMaster  = path.indexOf('master');
+            var indexofJava = path.indexOf('java') + 1;
+            var address = '/';
+
+            var user = path[1];
+            var repo = path[2];
+
+            for(var x = indexOfMaster + 1; x < indexofJava; x++){
+                address = address + path[x] + '/';
+            }
+
+            var url = 'https://api.github.com/repos/' + user + '/'+ repo + '/contents' + address + module;
+            var fileUrl = 'https://github.com/' + user + '/' + repo + '/blob/master/' + address + module;
+
+            this.getRequest(url, function(status){
+                if(status === 200){
+                    console.log('200');
+                    window.open(fileUrl, '_blank');
+                } else if(status === 404){
+                    alert('\'' + variable + '\' is a readonly variable');
+                } else {
+                    console.log('error');
+                }
+            });
+
+
+
+            //window.open(url, '_blank');
         }
     }
 
-    getModules (xArray, yArray){
-        var xl = xArray.length;
-        var yl = yArray.length;
-        var remaining = 0;
-
-        //var pathString = xArray.toString();
+    getModules (Array){
         var path = '';
-
-        if(xl < yl){
-            remaining = yl - xl;
-            //console.log(xArray, yArray, remaining);
-            for(var x = xl; x < yl; x++){
-                path = path + '/' + yArray[x];
+        for(var x = 0; x < Array.length; x++){
+            if(x === 0){
+                path = Array[x];
+            } else {
+                path = path + '/' + Array[x];
             }
-        }
-         else {
-            remaining = xl - yl;
         }
          return path;
     }
