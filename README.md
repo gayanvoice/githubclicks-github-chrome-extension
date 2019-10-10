@@ -1,6 +1,10 @@
 # GitHubClicks
 Navigate through modules, classes and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API. The project supports Android projects written in Java and Kotlin. The extension is still under experimental stage.
 
+
+## Contribute
+
+### Source
 <pre>
 root/
 ├── LICENSE
@@ -19,3 +23,10 @@ root/
 │   |   └── Java.js
 │   |   └── Kotlin.js
 </pre>
+#### manifest.json
+The extension has a JSON-formatted manifest file, named manifest.json, that provides important information about `name`, `version`, `description`, `content_scripts`, `background`, `icons`, `permissions`, and `version`.
+
+
+
+
+
