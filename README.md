@@ -3,6 +3,19 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gayankuruppu/GitHubClicks)
 
 
+## Also: Create your Android VPN client in few steps by using Android Studio https://git.io/JeY69
+
+
+### Also: Alternative to Google Firebase Remote Config! Remote config the variables, appearance and the behavior of your app without publishing an app update https://git.io/JeW2o
+
+
+### Are you a Kotlin developer? Go and see the Kotlin version of this library https://git.io/JeCRG
+
+
+### Add animations in to your android app layouts https://git.io/JeW26
+
+
+
 ![GitHub Clicks](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks.gif)
 
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API.
