@@ -2,11 +2,6 @@
 ![GitHub](https://img.shields.io/github/license/gayankuruppu/GitHubClicks)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/gayankuruppu/GitHubClicks)
 
-
-#### Also: Alternative to Google Firebase Remote Config! Remote config the variables, appearance and the behavior of your app without publishing an app update https://git.io/JeW2o
-
-
-
 ![GitHub Clicks](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks.gif)
 
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API.
