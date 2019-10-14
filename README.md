@@ -4,6 +4,8 @@
 
 ![GitHub Clicks](https://raw.githubusercontent.com/gayankuruppu/GitHubClicks/images/github-clicks.gif)
 
+Firefox extension is available at https://addons.mozilla.org/en-US/firefox/addon/githubclicks/
+
 Navigate through modules, classes, and declarations in GitHub like an IDE. The Chrome extension is written in Javascript and based on JQuery to handle HTTP requests with Github API.
 
 The project supports Android projects written in Java and Kotlin. The extension is still under the experimental stage.
